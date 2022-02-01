@@ -1,7 +1,9 @@
 
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormControl, FormGroup } from '@angular/forms';
+import { QuestionBase } from '../form-factory/question-base';
+import { QuestionControlService } from '../form-factory/question-control.service';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 import * as sha512 from 'js-sha512';
 import { registrySch, GrsRegistrySch } from '../grs-registry-cre/grs-registry-cre.component'
@@ -236,6 +238,19 @@ export class GrsLoginComponent implements OnInit {
 
 
 
+}
+
+export class UsernameValidator {
+  static cannotContainSpace(control: AbstractControl) : ValidationErrors | null {
+      if((control.value as string).indexOf(' ') >= 0){
+        
+          return {cannotContainSpace: true}
+      }
+
+      console.log("mycontroll")
+
+      return null;
+  }
 }
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { faAddressCard, faBaby, faBlog, faCircle, faCircleNotch, faCoffee, faCog, faCogs, faEnvelope, faExclamation, faSign, faSignInAlt, faSync } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,6 +9,8 @@ import { faAddressCard, faBaby, faBlog, faCircle, faCircleNotch, faCoffee, faCog
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @Input() loggedUserName: String = "Not logged in"
+
   title = 'bc';
   closeResult = '';
   faIcon = faSignInAlt;
@@ -33,3 +35,14 @@ export class AppComponent {
     }
   }
 }
+
+export class GlobalVar { 
+
+  public static LoggedInStatus = false
+  public static TimedOut = true
+  // public static RestApiUrl = process.env.RESTAPI_URL || 'http://localhost:3000' // Angular process not working bug?
+
+  //public static RestApiUrl = '//mturcsrestapi.herokuapp.com'
+  public static RestApiUrl = 'http://localhost:3000'  
+}
+
