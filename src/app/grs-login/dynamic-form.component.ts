@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-import { QuestionBase } from './question-base';
-import { QuestionControlService } from './question-control.service';
-import { UsernameValidator } from './grs-supply.component';
+import { QuestionBase } from '../form-factory/question-base';
+import { QuestionControlService } from '../form-factory/question-control.service';
+import { UsernameValidator } from './grs-login.component';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -32,6 +32,7 @@ export class DynamicFormComponent implements OnInit {
 
   
 }
+export var payLoad:string
 
 
 

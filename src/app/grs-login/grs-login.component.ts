@@ -13,6 +13,7 @@ import { mapTo } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
 import { GrNavbarComponent } from '../gr-navbar/gr-navbar.component';
 import { GlobalVar } from '../app.component';
+import { LoginService } from '../form-factory/login.service ';
 
 
 
@@ -36,7 +37,7 @@ interface loggedSession {
 @Component({
   selector: 'app-grs-login',
   templateUrl: './grs-login.component.html',
-  providers: [GrNavbarComponent]
+  providers: [GrNavbarComponent,LoginService]
 })
 
 export class GrsLoginComponent implements OnInit {
