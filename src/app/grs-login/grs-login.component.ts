@@ -2,6 +2,7 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { QuestionBase } from '../form-factory/question-base';
+import { DynamicFormComponent,payLoad } from './dynamic-form.component'
 import { QuestionControlService } from '../form-factory/question-control.service';
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
@@ -24,7 +25,6 @@ const httpOptions = {
     'Content-Type': 'application/json'
   })
 };
-
 
 
 interface loggedSession {
@@ -77,11 +77,7 @@ export class GrsLoginComponent implements OnInit {
   uidCheck: Promise<Array<registrySch>> | null = null;
 
 
-  myGroup = new FormGroup({
-    UserName: new FormControl(),
-    PassWord: new FormControl()
-  });
-
+  
 
   constructor(
     private http: HttpClient,

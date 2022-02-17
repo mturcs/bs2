@@ -32,7 +32,7 @@ export class DynamicFormComponent implements OnInit {
 
   
 }
-export var payLoad:string
+export var payLoad:string, form:FormGroup
 
 
 
